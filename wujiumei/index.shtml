@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>九妹-帮助您找到您喜欢的产品</title>
+<meta name="title" content="Shop">
+<meta name="description" content="九妹帮助您找到您喜欢的产品,提供手机、智能手机、手机配件等产品,九妹为您做贴心的服务。">
+<meta name="keywords" content="九妹,手机,智能手机,手机配件,android,ios,零售,购物">
+<link rel="shortcut icon" href="">
+
+<link rel="stylesheet" type="text/css" href="http://www.wujiumei.com/css/base.css">
+<link rel="stylesheet" type="text/css" href="http://www.wujiumei.com/css/shop_page.css">
+<link rel="stylesheet" type="text/css" href="http://www.wujiumei.com/css/feed_page.css">
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="bootstrap/assets/js/html5shiv.js"></script>
+      <script src="bootstrap/assets/js/respond.min.js"></script>
+    <![endif]-->
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+</head>
+<body class=" logged_out  ">
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<ul class="nav">
+					<li class="first active"><a href="http://www.wujiumei.com">首页</a>
+					</li>
+					<li><a href="#">注册</a>
+					</li>
+					<!-- 
+					<li class="first">
+						<form class="search">
+							<div class="icon"></div>
+							<input name="search" placeholder="Search" class="" type="text">
+						</form>
+					</li> -->
+				</ul>
+				<div class="pull-right">
+					<a class="brand" href="http://www.wujiumei.com"
+						style="color: #5E5E5E; font-size: 24px; font-weight: bold;">九妹
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="banner" class="logout">
+			<div class="message">
+				<span class="bold">九妹帮助您找到您喜欢的产品。</span>
+			</div>
+			<div class="options">
+				<div class="option">
+					<a href="#" class="btn">加入</a>
+				</div>
+				<div class="option">
+					<a href="#" class="btn italic">登录</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="margin-top: 0px;" id="content">
+		<section class="shop">
+			<header>
+				<div id="shop_breadcrumb" class="breadcrumb">
+					<ul>
+						<li class="last first active"><a
+							href="http://www.wujiumei.com">商店</a>
+						</li>
+						<li class="count">有<span>10</span> 个产品</li>
+					</ul>
+				</div>
+				<div id="shop_nav" class="text-nav">
+					<ul>
+						<li class="active"><a href="http://www.wujiumei.com">所有产品</a>
+						</li>
+						<li class="men first"><a href="#">手机</a>
+						</li>
+						<li class="women"><a href="#">手机配件</a>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<div id="badge"></div>
+		</section>
+	</div>
+
+	<div id="content_below">
+		<section style="min-height: 0px;" class="shop">
+			<header>
+				<div style="display: block;" id="options">
+					<select id="sort">
+						<option selected="selected" value="trending_score">最新产品</option>
+						<option value="added_count">最热产品</option>
+						<option value="date_created">精品推荐</option>
+					</select> <select id="price">
+						<option selected="selected" value="">任意价格</option>
+						<option value="1-20">¥1-20</option>
+						<option value="20-50">¥20-50</option>
+						<option value="50-100">¥50-100</option>
+						<option value="100-200">¥100-200</option>
+						<option value="200-500">¥200-500</option>
+						<option value="500-5000">¥500-5000</option>
+						<option value="5000+">¥5000+</option>
+					</select>
+					<div id="search">
+						<div class="icon"></div>
+						<input placeholder="输入关键字过滤商品" id="query" type="text">
+					</div>
+				</div>
+			</header>
+			<div id="podium" class="grabs grid active">
+						<div style="opacity: 1;" class="model product awarded ">
+							<div class="image">
+								<a href="#"> <img
+									src="http://www.wujiumei.com/attached/image/2013/09/27/8cafe8b9-b3eb-4bb1-a295-29254ffc370c.jpg" id="img_d20f5313-fe6b-419c-9e0e-b21ae88157a1" data-ratio="1"
+									style="width:266px; height:266px;" height="300" width="300">
+								</a>
+							</div>
+							<div class="model product meta">
+								<div style="display: block;" class="info with_avatar"
+									id="price_and_wants">
+									<div class="badge">
+										<span><small>#</small>1</span>
+									</div>
+									<div class="text">
+										<div class="title">Mi/小米 MI2系列 M2</div>
+										<div style="clear: both;"></div>
+										<div class="price">¥1,739</div>
+										<div class="wants"></div>
+										<div style="clear: both;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="opacity: 1;" class="model product awarded ">
+							<div class="image">
+								<a href="#"> <img
+									src="http://www.wujiumei.com/attached/image/2013/09/27/3f0f571a-63f5-4471-972b-553c4bc21aa6.jpg" id="img_fdf1442a-5632-41d9-81a9-691c1853b66b" data-ratio="1"
+									style="width:266px; height:266px;" height="300" width="300">
+								</a>
+							</div>
+							<div class="model product meta">
+								<div style="display: block;" class="info with_avatar"
+									id="price_and_wants">
+									<div class="badge">
+										<span><small>#</small>2</span>
+									</div>
+									<div class="text">
+										<div class="title">Mi/小米 2S系列 小米2S</div>
+										<div style="clear: both;"></div>
+										<div class="price">¥1,849</div>
+										<div class="wants"></div>
+										<div style="clear: both;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="opacity: 1;" class="model product awarded last_of_the_row">
+							<div class="image">
+								<a href="#"> <img
+									src="http://www.wujiumei.com/attached/image/2013/09/27/c42aecea-c726-41d6-9884-6e0f666a0c6d.jpg" id="img_8a023b22-06c4-4488-a2ce-816a06ba6ae2" data-ratio="1"
+									style="width:266px; height:266px;" height="300" width="300">
+								</a>
+							</div>
+							<div class="model product meta">
+								<div style="display: block;" class="info with_avatar"
+									id="price_and_wants">
+									<div class="badge">
+										<span><small>#</small>3</span>
+									</div>
+									<div class="text">
+										<div class="title">HTC T528d</div>
+										<div style="clear: both;"></div>
+										<div class="price">¥1,298</div>
+										<div class="wants"></div>
+										<div style="clear: both;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="opacity: 1;" class="model product awarded ">
+							<div class="image">
+								<a href="#"> <img
+									src="http://www.wujiumei.com/attached/image/2013/09/27/bf016487-3ac7-4960-86d2-b39bf487df1d.jpg" id="img_beb3edeb-0f92-48f4-b585-e8294b823112" data-ratio="1"
+									style="width:266px; height:266px;" height="300" width="300">
+								</a>
+							</div>
+							<div class="model product meta">
+								<div style="display: block;" class="info with_avatar"
+									id="price_and_wants">
+									<div class="badge">
+										<span><small>#</small>4</span>
+									</div>
+									<div class="text">
+										<div class="title">Apple/苹果 iPhone5</div>
+										<div style="clear: both;"></div>
+										<div class="price">¥4,488</div>
+										<div class="wants"></div>
+										<div style="clear: both;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="opacity: 1;" class="model product awarded ">
+							<div class="image">
+								<a href="#"> <img
+									src="http://www.wujiumei.com/attached/image/2013/09/27/6364db77-71e9-4aab-b5ab-aa4f2d88d93c.jpg" id="img_b7d407c1-0fee-4e09-a482-499934172e24" data-ratio="1"
+									style="width:266px; height:266px;" height="300" width="300">
+								</a>
+							</div>
+							<div class="model product meta">
+								<div style="display: block;" class="info with_avatar"
+									id="price_and_wants">
+									<div class="badge">
+										<span><small>#</small>5</span>
+									</div>
+									<div class="text">
+										<div class="title">Apple/苹果 iPhone 4S</div>
+										<div style="clear: both;"></div>
+										<div class="price">¥3,948</div>
+										<div class="wants"></div>
+										<div style="clear: both;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div style="opacity: 1;" class="model product awarded last_of_the_row">
+							<div class="image">
+								<a href="#"> <img
+									src="http://www.wujiumei.com/attached/image/2013/09/27/86bc2b0b-c7fa-406d-aa45-80c6f143738a.jpg" id="img_a841cf06-a504-4b51-800f-6650e19fcc62" data-ratio="1"
+									style="width:266px; height:266px;" height="300" width="300">
+								</a>
+							</div>
+							<div class="model product meta">
+								<div style="display: block;" class="info with_avatar"
+									id="price_and_wants">
+									<div class="badge">
+										<span><small>#</small>6</span>
+									</div>
+									<div class="text">
+										<div class="title">Samsung/三星 i9260</div>
+										<div style="clear: both;"></div>
+										<div class="price">¥1,949</div>
+										<div class="wants"></div>
+										<div style="clear: both;"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+			</div>
+			<div id="products" class="grabs grid active">
+						<div style="opacity: 1;" class="model product small ">
+							<div class="image">
+							<a
+								href="#"
+								title="Samsung/三星 i8552">
+								<img class="image_loaded"
+								src="http://www.wujiumei.com/attached/image/2013/09/27/4478e18f-6dbc-4a63-9e71-75baf13b591f.jpg"
+								alt="Samsung/三星 i8552"
+								id="img_a69541ce-d899-4457-88f5-e56cf856e7dc" data-ratio="1"
+								style="width: 186px; height: 195px; display: inline;"
+								title="Samsung/三星 i8552"
+								height="475" width="455"> </a>
+						</div>
+						<div class="model product meta">
+							<div class="info " id="price_and_wants">
+								<div class="text">
+									<div class="title">Samsung/三星 i8552</div>
+									<div style="clear: both;"></div>
+									<div class="price">¥1,799</div>
+									<div class="wants"></div>
+									<div style="clear: both;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+						<div style="opacity: 1;" class="model product small ">
+							<div class="image">
+							<a
+								href="#"
+								title="Samsung/三星 I8262D">
+								<img class="image_loaded"
+								src="http://www.wujiumei.com/attached/image/2013/09/27/a766cb38-bc84-42cc-a371-bc36b0745fa1.jpg"
+								alt="Samsung/三星 I8262D"
+								id="img_ce655c8b-c926-47be-bb1e-1812b76f7852" data-ratio="1"
+								style="width: 186px; height: 195px; display: inline;"
+								title="Samsung/三星 I8262D"
+								height="475" width="455"> </a>
+						</div>
+						<div class="model product meta">
+							<div class="info " id="price_and_wants">
+								<div class="text">
+									<div class="title">Samsung/三星 I8262D</div>
+									<div style="clear: both;"></div>
+									<div class="price">¥1,235</div>
+									<div class="wants"></div>
+									<div style="clear: both;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+						<div style="opacity: 1;" class="model product small ">
+							<div class="image">
+							<a
+								href="#"
+								title="华为Ascend P6 手机（TD-SCDMA/GSM）白色">
+								<img class="image_loaded"
+								src="http://www.wujiumei.com/attached/image/2013/09/27/c7b52c5c-4e46-4b3e-87bc-d2e1db7df101.jpg"
+								alt="华为Ascend P6 手机（TD-SCDMA/GSM）白色"
+								id="img_057dedc8-0bd4-45ca-9a64-dea33febd04a" data-ratio="1"
+								style="width: 186px; height: 195px; display: inline;"
+								title="华为Ascend P6 手机（TD-SCDMA/GSM）白色"
+								height="475" width="455"> </a>
+						</div>
+						<div class="model product meta">
+							<div class="info " id="price_and_wants">
+								<div class="text">
+									<div class="title">华为Ascend P6 手机（TD-SCDMA/GSM）白色</div>
+									<div style="clear: both;"></div>
+									<div class="price">¥1,899</div>
+									<div class="wants"></div>
+									<div style="clear: both;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+						<div style="opacity: 1;" class="model product small last_of_the_row">
+							<div class="image">
+							<a
+								href="#"
+								title="Mi/小米 小米2A">
+								<img class="image_loaded"
+								src="http://www.wujiumei.com/attached/image/2013/09/27/49cdbdc4-e86c-471c-8c39-e8c9d816f64c.jpg"
+								alt="Mi/小米 小米2A"
+								id="img_b372f371-a927-47ba-b9eb-4fc5be9e4f07" data-ratio="1"
+								style="width: 186px; height: 195px; display: inline;"
+								title="Mi/小米 小米2A"
+								height="475" width="455"> </a>
+						</div>
+						<div class="model product meta">
+							<div class="info " id="price_and_wants">
+								<div class="text">
+									<div class="title">Mi/小米 小米2A</div>
+									<div style="clear: both;"></div>
+									<div class="price">¥1,439</div>
+									<div class="wants"></div>
+									<div style="clear: both;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+			<div id="stores" class="grabs grid active"></div>
+		</section>
+		<div style="clear: both;"></div>
+	</div>
+	<footer>
+		<div>
+			<p>版权所有 © 吴九梅 2013。 保留一切权利。</p>
+		</div>
+	</footer>
+</body>
+</html>

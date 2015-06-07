@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="favicon.ico" />
+<title>吴九梅-手机店</title>
+<meta content="吴九梅的手机店-为您服务。" name="description">
+<meta content="吴九梅,吴九梅的手机店,手机,手机配件,配件,wujiumei,九梅,jiumei" name="keywords">
+<script type="text/javascript" src="http://www.wujiumei.com/jslib/extBrowser.js" charset="utf-8"></script>
+
+<!-- 引入jQuery -->
+<script src="http://www.wujiumei.com/jslib/jquery-1.8.3.js" type="text/javascript"
+	charset="utf-8"></script>
+
+<!-- 引入bootstrap样式 -->
+<link href="http://www.wujiumei.com/jslib/bootstrap-2.3.1/css/bootstrap.min.css"
+	rel="stylesheet" media="screen">
+<!-- <script charset="utf-8" src="http://www.wujiumei.com/jslib/bootstrap-2.3.1/js/bootstrap.min.js" charset="utf-8"></script> -->
+
+<!-- 引入EasyUI -->
+<link id="easyuiTheme" rel="stylesheet"
+	href="http://www.wujiumei.com/jslib/jquery-easyui-1.3.3/themes/bootstrap/easyui.css"
+	type="text/css">
+<!-- <link rel="stylesheet" href="http://www.wujiumei.com/jslib/jquery-easyui-1.3.3/themes/icon.css" type="text/css"> -->
+<script type="text/javascript"
+	src="http://www.wujiumei.com/jslib/jquery-easyui-1.3.3/jquery.easyui.min.js" charset="utf-8"></script>
+<script type="text/javascript"
+	src="http://www.wujiumei.com/jslib/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"
+	charset="utf-8"></script>
+<!-- 修复EasyUI1.3.3中layout组件的BUG -->
+<script type="text/javascript"
+	src="http://www.wujiumei.com/jslib/jquery-easyui-1.3.3/plugins/jquery.layout.js"
+	charset="utf-8"></script>
+
+<!-- 引入EasyUI Portal插件 -->
+<link rel="stylesheet" href="http://www.wujiumei.com/jslib/jquery-easyui-portal/portal.css"
+	type="text/css">
+<script type="text/javascript"
+	src="http://www.wujiumei.com/jslib/jquery-easyui-portal/jquery.portal.js" charset="utf-8"></script>
+
+<!-- 扩展EasyUI -->
+<script type="text/javascript" src="http://www.wujiumei.com/jslib/extEasyUI.js"
+	charset="utf-8"></script>
+
+<!-- 扩展EasyUI Icon -->
+<link rel="stylesheet" href="http://www.wujiumei.com/style/extEasyUIIcon.css"
+	type="text/css">
+
+<!-- 扩展jQuery -->
+<script type="text/javascript" src="http://www.wujiumei.com/jslib/extJquery.js"
+	charset="utf-8"></script>
+<script type="text/javascript">
+	var index_tabs;
+	var index_tabsMenu;
+	var index_layout;
+	$(function() {
+		index_layout = $('#index_layout').layout({
+			fit : true
+		});
+		/*index_layout.layout('collapse', 'east');*/
+
+		index_tabs = $('#index_tabs')
+				.tabs(
+						{
+							fit : true,
+							border : false,
+							onContextMenu : function(e, title) {
+								e.preventDefault();
+								index_tabsMenu.menu('show', {
+									left : e.pageX,
+									top : e.pageY
+								}).data('tabTitle', title);
+							},
+							tools : [
+									{
+										iconCls : 'database_refresh',
+										handler : function() {
+											var href = index_tabs.tabs(
+													'getSelected').panel(
+													'options').href;
+											if (href) {/*说明tab是以href方式引入的目标页面*/
+												var index = index_tabs
+														.tabs(
+																'getTabIndex',
+																index_tabs
+																		.tabs('getSelected'));
+												index_tabs
+														.tabs('getTab', index)
+														.panel('refresh');
+											} else {/*说明tab是以content方式引入的目标页面*/
+												var panel = index_tabs.tabs(
+														'getSelected').panel(
+														'panel');
+												var frame = panel
+														.find('iframe');
+												try {
+													if (frame.length > 0) {
+														for ( var i = 0; i < frame.length; i++) {
+															frame[i].contentWindow.document
+																	.write('');
+															frame[i].contentWindow
+																	.close();
+															frame[i].src = frame[i].src;
+														}
+														if (navigator.userAgent
+																.indexOf("MSIE") > 0) {// IE特有回收内存方法
+															try {
+																CollectGarbage();
+															} catch (e) {
+															}
+														}
+													}
+												} catch (e) {
+												}
+											}
+										}
+									},
+									{
+										iconCls : 'delete',
+										handler : function() {
+											var index = index_tabs
+													.tabs(
+															'getTabIndex',
+															index_tabs
+																	.tabs('getSelected'));
+											var tab = index_tabs.tabs('getTab',
+													index);
+											if (tab.panel('options').closable) {
+												index_tabs.tabs('close', index);
+											} else {
+												$.messager
+														.alert(
+																'提示',
+																'['
+																		+ tab
+																				.panel('options').title
+																		+ ']不可以被关闭！',
+																'error');
+											}
+										}
+									} ]
+						});
+
+		index_tabsMenu = $('#index_tabsMenu').menu(
+				{
+					onClick : function(item) {
+						var curTabTitle = $(this).data('tabTitle');
+						var type = $(item.target).attr('title');
+
+						if (type === 'refresh') {
+							index_tabs.tabs('getTab', curTabTitle).panel(
+									'refresh');
+							return;
+						}
+
+						if (type === 'close') {
+							var t = index_tabs.tabs('getTab', curTabTitle);
+							if (t.panel('options').closable) {
+								index_tabs.tabs('close', curTabTitle);
+							}
+							return;
+						}
+
+						var allTabs = index_tabs.tabs('tabs');
+						var closeTabsTitle = [];
+
+						$.each(allTabs, function() {
+							var opt = $(this).panel('options');
+							if (opt.closable && opt.title != curTabTitle
+									&& type === 'closeOther') {
+								closeTabsTitle.push(opt.title);
+							} else if (opt.closable && type === 'closeAll') {
+								closeTabsTitle.push(opt.title);
+							}
+						});
+
+						for ( var i = 0; i < closeTabsTitle.length; i++) {
+							index_tabs.tabs('close', closeTabsTitle[i]);
+						}
+					}
+				});
+
+			$('#layout_east_calendar').calendar({
+						fit : true,
+						current : new Date(),
+						border : false,
+						onSelect : function(date) {
+							$(this).calendar('moveTo', new Date());
+						}
+					});
+
+					$('#layout_east_onlinePanel').panel({
+						tools : [ {
+							iconCls : 'database_refresh',
+							handler : function() {
+							}
+						} ]
+					});
+	});
+</script>
+</head>
+<body>
+	<div id="index_layout">
+		<div
+			data-options="region:'north'"
+			style="height: 70px; overflow: hidden;" class="logo">
+			<div id="sessionInfoDiv" style="position: absolute; right: 0px; top: 0px;" class="alert alert-info">
+				<a href="http://blog.wujiumei.com">进入博客</a>
+			</div>
+			<div id="ad1" style="position: absolute; right: 700px; top: 9px; bottom: 0px;">
+				<!--ad-->
+			</div>
+		</div>
+		<div
+			data-options="region:'west',split:true"
+			title="模块导航" style="width: 200px; overflow: hidden;">
+			<div class="easyui-accordion" data-options="fit:true,border:false">
+				<div title="菜单" style="padding: 5px;" data-options="border:false,isonCls:'anchor',tools : [ {
+							iconCls : 'database_refresh',
+							handler : function() {
+								$('#layout_west_tree').tree('reload');
+							}
+						}, {
+							iconCls : 'resultset_next',
+							handler : function() {
+								var node = $('#layout_west_tree').tree('getSelected');
+								if (node) {
+									$('#layout_west_tree').tree('expandAll', node.target);
+								} else {
+									$('#layout_west_tree').tree('expandAll');
+								}
+							}
+						}, {
+							iconCls : 'resultset_previous',
+							handler : function() {
+								var node = $('#layout_west_tree').tree('getSelected');
+								if (node) {
+									$('#layout_west_tree').tree('collapseAll', node.target);
+								} else {
+									$('#layout_west_tree').tree('collapseAll');
+								}
+							}
+						} ]">
+					<div class="well well-small">
+						<ul id="layout_west_tree"></ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div data-options="region:'center'" title="欢迎光临"
+			style="overflow: hidden;">
+			<div id="index_tabs" style="overflow: hidden;">
+				<div title="首页" data-options="border:false"
+					style="overflow: hidden;">
+					<iframe src="http://www.wujiumei.com/portal/index.html"
+						frameborder="0" style="border: 0; width: 100%; height: 98%;"></iframe>
+				</div>
+			</div>
+		</div>
+		<div
+			data-options="region:'east'"
+			title="日历" style="width: 205px; overflow: hidden;">
+			<div class="easyui-layout" data-options="fit:true,border:false">
+				<div data-options="region:'north',border:false"
+					style="height: 180px; overflow: hidden;">
+					<div id="layout_east_calendar"></div>
+				</div>
+				<div data-options="region:'center',border:false"
+					style="overflow: hidden;">
+					<div id="layout_east_onlinePanel" data-options="fit:true,border:false"
+						title="google提供的广告">
+						<div class="well well-small" style="margin: 3px;">
+						<!--ad-->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div
+			data-options="region:'south',border:false"
+			style="height: 30px; overflow: hidden;">
+			<div class="panel-header panel-title" style="text-align: center;">
+				版权所有@<a href="mailto:1347305766@qq.com">吴九梅</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="index_tabsMenu" style="width: 120px; display: none;">
+		<div title="refresh" data-options="iconCls:'transmit'">刷新</div>
+		<div class="menu-sep"></div>
+		<div title="close" data-options="iconCls:'delete'">关闭</div>
+		<div title="closeOther" data-options="iconCls:'delete'">关闭其他</div>
+		<div title="closeAll" data-options="iconCls:'delete'">关闭所有</div>
+	</div>
+</body>
+</html>
